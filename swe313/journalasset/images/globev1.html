@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="company no-js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
+		<title></title>
+		<style>
+			.container {
+				border: none;
+				position: relative;
+			}
+			.ie_container {
+				text-align: center;
+				border: none;
+				padding: 10px;
+				display: none;
+			}
+			a, img{
+				outline: none;
+				border: 0;
+			}
+			.ie_container img {
+				width:100%;
+			}
+			.blind {
+				height: 100%;
+				width: 100%;
+				background-color: white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 100;
+			}
+			.blind img {
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			#myCanvas {
+				width: 100%;
+				height: auto;
+			}
+			
+			#companies {
+				position: absolute;
+				top: 0;
+				width: 800px;
+				left: -900px;
+			}
+			
+			a.finance {
+				background-color: #3E67CC;
+				color: #3E67CC;
+			}
+			.telecom {
+				color: pink;
+				background: pink;
+			}
+			.transport {
+				color: red;
+				background: red;
+			}
+			.estate {
+				color: gray;
+				background: gray;
+			}
+			.life {
+				color: green;
+				background: green;
+			}
+			.energy {
+				color: blue;
+				background: blue;
+			}
+			canvas {
+			  image-rendering: optimizeSpeed;             /* Older versions of FF          */
+			  image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+			  image-rendering: -webkit-optimize-contrast; /* Safari                        */
+			  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+			  image-rendering: pixelated;                 /* Awesome future-browsers       */
+			  -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+			}
+			.nag {
+				margin:0 auto;
+				background-color:#fdf2ab;
+				color:#000;
+				width:80%;
+				text-align:center;
+			}
+			.nag a {
+				color:#e25600;
+				text-decoration:underline;
+			}
+			
+		</style>
+    </head>
+	<body>
+<!--[if gt IE 7]><!-->
+		<div id="myCanvasContainer">
+            <!-- <div class="ie_container">
+                <img src="assets/img/MI-IE8.png" alt="classifications" usemap="#mi" />
+                <map name="mi">
+                    <area shape="rect" coords="80,0,235,185" target="_top" href="/major-investments/financial-services.html" alt="Financial Services">
+                    <area shape="rect" coords="400,0,550,185" target="_top" href="/major-investments/telecommunications-media-and-technology.html" alt="Telecommunications, Media and Technologies">
+                    <area shape="rect" coords="725,0,865,185" target="_top" href="/major-investments/transportation-and-industrials.html" alt="Transport and Industries">
+                    <area shape="rect" coords="80,230,235,425" target="_top" href="/major-investments/consumer-and-real-estate.html" alt="Consumer and Real Estate">
+                    <area shape="rect" coords="400,230,550,425" target="_top" href="/major-investments/energy-and-resources.html" alt="Energy and Resources">
+                    <area shape="rect" coords="725,230,865,425" target="_top" href="/major-investments/life-sciences-and-agriculture.html" alt="Life Sciences and Argiculture">
+                </map>
+            </div> -->
+			<div class="container">
+				<div class="blind" style="line-height: 650px; display: none;"><img class="loading" src="globev1_files/loading.gif" alt=""></div>
+				<canvas width="1336" height="650" id="myCanvas" title="Gilead Sciences, Inc." style="height: 650px; cursor: pointer;"></canvas>
+			</div>
+			<ul id="companies" style="display: none;">
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="AIA Group Limited"><img src="globev1_files/aia-group-limited.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="Bank of China Limited"><img src="globev1_files/bank-of-china.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="China Construction Bank Corporation"><img src="globev1_files/ccb.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="China Pacific Insurance (Group) Co., Ltd."><img src="globev1_files/cpi.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="DBS Group Holdings Ltd"><img src="globev1_files/dbs.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="Industrial and Commercial Bank of China Limited"><img src="globev1_files/icbc.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="Ping An Insurance (Group) Company of China, Ltd."><img src="globev1_files/pingan.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="Prudential plc"><img src="globev1_files/prudential.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="PT Bank Danamon Indonesia, Tbk."><img src="globev1_files/pt-bank.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company finance" href="http://www.temasekreview.com.sg/major-investments/financial-services.html" onclick="company_select(this);" title="Standard Chartered PLC"><img src="globev1_files/standard-chartered.png" alt="" width="300" height="100"></a></li>
+				
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Intouch Holdings Public Company Limited"><img src="globev1_files/intouch.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Markit Ltd."><img src="globev1_files/markit.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Singapore Technologies Telemedia Pte Ltd"><img src="globev1_files/stt.png" alt="" width="300" height="56"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Alibaba Group Holding Limited"><img src="globev1_files/alibaba.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Bharti Airtel Limited"><img src="globev1_files/airtel.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="MediaCorp Pte Ltd"><img src="globev1_files/mediacorp.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company telecom" href="http://www.temasekreview.com.sg/major-investments/telecommunications-media-and-technology.html" onclick="company_select(this);" title="Singapore Telecommunications Limited"><img src="globev1_files/singtel.png" alt="" width="300" height="100"></a></li>
+				
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Evonik Industries AG"><img src="globev1_files/evonik.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Keppel Corporation Limited"><img src="globev1_files/keppel.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Neptune Orient Lines Limited"><img src="globev1_files/nol.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="PSA International Pte Ltd"><img src="globev1_files/psa.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Sembcorp Industries Ltd"><img src="globev1_files/sembcorp.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Singapore Technologies Engineering Ltd"><img src="globev1_files/st-engineering.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Univar Inc."><img src="globev1_files/univar.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Singapore Airlines Limited"><img src="globev1_files/singapore-airlines.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="Singapore Power Limited"><img src="globev1_files/singapore-power.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company transport" href="http://www.temasekreview.com.sg/major-investments/transportation-and-industrials.html" onclick="company_select(this);" title="SMRT Corporation Ltd"><img src="globev1_files/smrt.png" alt="" width="300" height="100"></a></li>
+				
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="A.S. Watson Holdings Limited"><img src="globev1_files/as-watson.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="CapitaLand Limited"><img src="globev1_files/capitaland.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Dufry AG"><img src="globev1_files/dufry.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="M+S Pte. Ltd."><img src="globev1_files/ms.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Olam International Limited"><img src="globev1_files/olam.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Pulau Indah Ventures Sdn Bhd"><img src="globev1_files/pulauinda.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Ascendas-Singbridge Pte Ltd"><img src="globev1_files/ascendas.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Mandai Safari Park Holdings Pte. Ltd."><img src="globev1_files/mandai.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Mapletree Investments Pte Ltd"><img src="globev1_files/mapletree.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="SATS Ltd."><img src="globev1_files/sats.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company estate" href="http://www.temasekreview.com.sg/major-investments/consumer-and-real-estate.html" onclick="company_select(this);" title="Surbana Jurong Private Limited"><img src="globev1_files/surbana-jurong.png" alt="" width="300" height="100"></a></li>
+				
+				<li><a class="company energy" href="http://www.temasekreview.com.sg/major-investments/energy-and-resources.html" onclick="company_select(this);" title="Repsol, S.A."><img src="globev1_files/repsol.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company energy" href="http://www.temasekreview.com.sg/major-investments/energy-and-resources.html" onclick="company_select(this);" title="Turquoise Hill Resources Ltd."><img src="globev1_files/turquoise-hill.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company energy" href="http://www.temasekreview.com.sg/major-investments/energy-and-resources.html" onclick="company_select(this);" title="Pavilion Energy Pte Ltd"><img src="globev1_files/pavilion.png" alt="" width="300" height="100"></a></li>
+				
+				<li><a class="company life" href="http://www.temasekreview.com.sg/major-investments/life-sciences-and-agriculture.html" onclick="company_select(this);" title="Celltrion, Inc."><img src="globev1_files/celltrion.png" alt="" width="300" height="100"></a></li>
+				<li><a class="company life" href="http://www.temasekreview.com.sg/major-investments/life-sciences-and-agriculture.html" onclick="company_select(this);" title="Gilead Sciences, Inc."><img src="globev1_files/gilead.png" alt="" width="300" height="83"></a></li>
+				<li><a class="company life" href="http://www.temasekreview.com.sg/major-investments/life-sciences-and-agriculture.html" onclick="company_select(this);" title="Thermo Fisher Scientific Inc."><img src="globev1_files/thermo-fisher.png" alt="" width="300" height="100"></a></li>
+				
+			</ul>
+			
+		</div>
+		<script src="globev1_files/jquery-1.js"></script>
+		<script src="globev1_files/mainv1.js"></script>
+<!--<![endif]-->
+	
+
+</body></html>
