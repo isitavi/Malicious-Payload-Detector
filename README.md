@@ -1,0 +1,2 @@
+# Malicious-Payload-Detector
+Firstly, I want to make a whitelist which will be act as a firewall. This white list will be enriched with modern malicious payload and this script is placed before on the web server. So when an attacker or legitimate user input a query on search field, then white list analyze his payload and if payload is matched with a white list then it will be filtered.So this malicious payload failed to hit web server and attacker or legitimate user's information is sent to the admin so admin can see who the actual person behind this illegal purpose.
